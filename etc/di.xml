@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference
+            for="ALevel\ImageCleaner\Api\Provider\Eav\ProductImageProviderInterface"
+            type="ALevel\ImageCleaner\Provider\Eav\ProductImageProvider"
+    />
+    <preference
+            for="ALevel\ImageCleaner\Api\Provider\Directory\ProductImageProviderInterface"
+            type="ALevel\ImageCleaner\Provider\Directory\ProductImageProvider"
+    />
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="image-cleaner" xsi:type="object">ALevel\ImageCleaner\Console\Command\CleanerCommand</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
